@@ -1,0 +1,20 @@
+StudentSwap ready-to-run LOCAL project (requires existing MySQL database)
+
+1. BACK UP your existing studentswap MySQL database.
+2. In MySQL Workbench open database-migration.sql and execute it once.
+   It creates app_users, user_sessions, listing_owners, buyer_messages.
+   It does not delete your existing listings.
+3. Existing listings have no owner and are admin-managed. New student listings have their own owner.
+4. Your existing students table MUST contain student_id=1 (legacy FK used by listings).
+5. Set DB_PASSWORD and ADMIN_PASSWORD as environment variables, or replace CHANGE_ME
+   in studentswap-backend/src/main/resources/application.properties locally.
+   Do NOT publish passwords or commit the file with secrets.
+6. Start MySQL. In backend terminal run: .\mvnw.cmd spring-boot:run
+7. In frontend terminal run: npm.cmd install ; npm.cmd run dev -- --port 5175
+8. Open http://localhost:5175 and register two accounts to test separate ownership.
+
+Features: registration/login, bearer sessions, account deletion, listing creation/images,
+owner/admin edit-delete, buyer->seller messages, admin contact requests.
+
+LIMITATIONS: No email verification/password reset, no reply UI, no production deployment.
+Existing database and local runtime are required; extraction alone cannot start a website.

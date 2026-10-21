@@ -1,0 +1,19 @@
+
+# Frontend dependencies and builds
+StudentSwap-Frontend/node_modules/
+StudentSwap-Frontend/dist/
+
+# Backend build output
+studentswap-backend/target/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!.env.example
+
+# Logs and IDE files
+*.log
+.vscode/
